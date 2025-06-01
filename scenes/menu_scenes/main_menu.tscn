@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi1r8popudn20"]
+
+[ext_resource type="Script" uid="uid://dpkk83ymtfyxi" path="res://scripts/menu_scripts/main_menu.gd" id="1_ny5bo"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ny5bo")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainMenuTitle" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 110.0
+offset_right = 724.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 42
+text = "Network Demo"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 254.0
+offset_right = 679.0
+offset_bottom = 393.0
+
+[node name="PlayButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Play"
+
+[node name="MultiplayerButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Multiplayer"
+
+[node name="QuitButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+
+[connection signal="pressed" from="Control/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/MultiplayerButton" to="." method="_on_multiplayer_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

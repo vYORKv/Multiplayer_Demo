@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://8pkw26mapk2o"]
+
+[ext_resource type="Script" uid="uid://n5723oaixxgm" path="res://scripts/meta_scripts/game_launch.gd" id="1_xi6g8"]
+
+[node name="Game" type="Node"]
+
+[node name="GameLaunch" type="Node" parent="."]
+script = ExtResource("1_xi6g8")
