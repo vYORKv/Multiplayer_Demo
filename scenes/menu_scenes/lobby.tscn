@@ -67,6 +67,53 @@ offset_bottom = 394.0
 theme_override_font_sizes/font_size = 36
 text = "Join"
 
+[node name="HostConfirmation" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HostConfirmation"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 208.0
+offset_right = 939.0
+offset_bottom = 331.0
+theme_override_font_sizes/font_size = 28
+text = "If hosting, be sure to forward port 2025 for TCP/UDP
+and restart the game. You will also need your external
+ip address for any clients to join."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HostConfirmation"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 608.0
+offset_right = 939.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 18
+text = "Use https://icanhazip.com/ to find public ip"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="HostConfirmation"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 336.0
+offset_right = 664.0
+offset_bottom = 394.0
+theme_override_font_sizes/font_size = 36
+text = "Continue"
+
+[node name="HCBackButton" type="Button" parent="HostConfirmation"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 408.0
+offset_right = 640.0
+offset_bottom = 466.0
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
 [node name="JoinEntry" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -109,6 +156,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="IPLabel" type="Label" parent="PreGameLobby"]
+visible = false
 layout_mode = 0
 offset_left = 16.0
 offset_top = 616.0
@@ -133,10 +181,23 @@ offset_right = 1136.0
 offset_bottom = 640.0
 max_length = 125
 
+[node name="IPButton" type="Button" parent="PreGameLobby"]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 600.0
+offset_right = 110.0
+offset_bottom = 631.0
+text = "Reveal IP"
+
 [node name="StartGameButton" type="Button" parent="PreGameLobby"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 64.0
+offset_top = 464.0
+offset_right = 225.0
+offset_bottom = 511.0
+theme_override_font_sizes/font_size = 28
+text = "Start Game"
 
 [node name="BlueSprite" type="Sprite2D" parent="PreGameLobby"]
 position = Vector2(64, 192)
@@ -182,9 +243,12 @@ replication_config = SubResource("SceneReplicationConfig_d631d")
 [connection signal="text_submitted" from="NameEntry/NameSubmission" to="." method="_on_name_submission_text_submitted"]
 [connection signal="pressed" from="HostJoinMenu/HostButton" to="." method="_on_host_button_pressed"]
 [connection signal="pressed" from="HostJoinMenu/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="HostConfirmation/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="HostConfirmation/HCBackButton" to="." method="_on_hc_back_button_pressed"]
 [connection signal="text_submitted" from="JoinEntry/AddressEntry" to="." method="_on_address_entry_text_submitted"]
 [connection signal="pressed" from="JoinEntry/JEBackButton" to="." method="_on_je_back_button_pressed"]
 [connection signal="text_submitted" from="PreGameLobby/ChatEntry" to="." method="_on_chat_entry_text_submitted"]
+[connection signal="pressed" from="PreGameLobby/IPButton" to="." method="_on_ip_button_pressed"]
 [connection signal="pressed" from="PreGameLobby/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="PreGameLobby/BlueButton" to="." method="_on_blue_button_pressed"]
 [connection signal="pressed" from="PreGameLobby/RedButton" to="." method="_on_red_button_pressed"]

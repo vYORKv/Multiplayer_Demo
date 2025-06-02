@@ -15,6 +15,11 @@ run/main_scene="uid://8pkw26mapk2o"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+NetworkController="*res://scripts/meta_scripts/network_controller.gd"
+Global="*res://scripts/meta_scripts/global.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
