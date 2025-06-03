@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c5b5gsc5lqhhs"]
+
+[node name="Spectator Camera" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)

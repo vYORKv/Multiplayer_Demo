@@ -56,6 +56,7 @@ func _on_chat_entry_text_submitted(new_text: String) -> void:
 
 func _on_start_game_button_pressed() -> void:
 	print(NetworkController.players)
+	get_tree().change_scene_to_file("res://scenes/location_scenes/arena.tscn")
 
 func _on_blue_button_pressed() -> void:
 	print("Name: " + str(Global.player_name))
